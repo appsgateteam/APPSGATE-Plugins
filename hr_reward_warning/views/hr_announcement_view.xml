@@ -156,7 +156,7 @@
         <record model="ir.ui.view" id="hr_job_inherit_form_view">
             <field name="name">hr.job.form.inherit.view</field>
             <field name="model">hr.job</field>
-            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="inherit_id" ref="hr_recruitment.hr_job_survey"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='hr_responsible_id']" position="after">
                         <field name="contract_ref"/>
