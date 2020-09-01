@@ -5,9 +5,9 @@ from odoo import models, fields, api
 class Employee(models.Model):
     _inherit = 'hr.employee'
 
-    labour_card_number = fields.Char(string="Employee Card Number", size=14, required=True)
-    salary_card_number = fields.Char(string="IBAN Number", size=23, required=True)
-    agent_id = fields.Many2one('res.bank', string="Agent/Bank", required=True)
+    labour_card_number = fields.Char(string="Employee Card Number", size=14, required=False)
+    salary_card_number = fields.Char(string="IBAN Number", size=23, required=False)
+    agent_id = fields.Many2one('res.bank', string="Agent/Bank", required=False)
 
     @api.multi
     def write(self, vals):
