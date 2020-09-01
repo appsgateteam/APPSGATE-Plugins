@@ -114,7 +114,7 @@ class HrAnnouncements(models.Model):
                     'view_id': False,
                     'type': 'ir.actions.act_window',
                     'name': _('Announcements'),
-                    'domain': "[('employee_ids','in', [id])]",
+                    'domain': "[('employee_ids','in', [self.id])]",
                     # 'res_id': ann_ids and ann_ids[0]
                 }
             return value
