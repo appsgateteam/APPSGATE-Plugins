@@ -133,6 +133,7 @@ class HrLegalEmployeeMaster(models.Model):
                         'view_id': False,
                         'type': 'ir.actions.act_window',
                         'name': _('Legal Actions'),
+                        'context': "{'default_employee_id': '%s'}" % each1.id 
                         # 'res_id': legal_ids
                     }
                 return value
