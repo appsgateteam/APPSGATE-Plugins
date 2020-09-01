@@ -18,7 +18,7 @@ class EmployeeTransfer(models.Model):
     employee_id = fields.Many2one('hr.employee', string='Employee', required=True,
                                   help='Select the employee you are going to transfer')
     date = fields.Date(string='Date', default=fields.Date.today())
-    branch = fields.Many2one('transfer.company', string='Transfer Branch',  copy=False,required=True)
+    branch = fields.Many2one('transfer.company', string='Transfer Branch',  copy=False,required=False)
 
     state = fields.Selection(
         [('draft', 'New'), ('cancel', 'Cancelled'), ('transfer', 'Transferred'), ('done', 'Done')],
