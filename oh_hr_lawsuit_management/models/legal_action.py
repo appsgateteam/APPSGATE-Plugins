@@ -124,5 +124,18 @@ class HrLegalEmployeeMaster(models.Model):
                     }
 
                 return value
+            else:
+                value = {
+                        'domain': [('employee_id', '=', each1.id)],
+                        'view_type': 'form',
+                        'view_mode': 'tree,form',
+                        'res_model': 'hr.lawsuit',
+                        'view_id': False,
+                        'type': 'ir.actions.act_window',
+                        'name': _('Legal Actions'),
+                        # 'res_id': legal_ids
+                    }
+                return value
+
 
 
