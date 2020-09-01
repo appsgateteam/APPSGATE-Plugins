@@ -121,3 +121,8 @@ class HrAnnouncements(models.Model):
 
 
     announcement_count = fields.Integer(compute='_announcement_count', string='# Announcements')
+
+class HrJobInh(models.Model):
+    _inherit = 'hr.job'
+
+    contract_ref = fields.Many2one('hr.contract',string="Contract Reference")
