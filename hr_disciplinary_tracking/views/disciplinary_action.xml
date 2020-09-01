@@ -119,6 +119,7 @@
                             string="Discipline"
                             icon="fa-info-circle"
                             type="action"
+                            context="{'default_employee_name': id}"
                             >
                         </button>
                 </xpath>

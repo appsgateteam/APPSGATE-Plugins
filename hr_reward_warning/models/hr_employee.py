@@ -90,7 +90,7 @@ class HrAnnouncements(models.Model):
                     'view_type': 'form',
                     'view_mode': 'tree,form',
                     'res_model': 'hr.announcement',
-                    'view_id': False,
+                    'view_id': view_id,
                     'type': 'ir.actions.act_window',
                     'name': _('Announcements'),
                     'res_id': ann_ids
