@@ -18,7 +18,7 @@ class HrLoan(models.Model):
             ts_user_id = result['user_id']
         else:
             ts_user_id = self.env.context.get('user_id', self.env.user.id)
-            result['employee_id'] = self.env['hr.employee'].search([('user_id', '=', ts_user_id)], limit=1).id
+            # result['employee_id'] = self.env['hr.employee'].search([('user_id', '=', ts_user_id)], limit=1).id
         return result
 
     @api.multi
