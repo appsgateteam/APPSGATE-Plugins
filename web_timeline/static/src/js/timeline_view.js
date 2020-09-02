@@ -31,8 +31,8 @@ odoo.define('web_timeline.TimelineView', function (require) {
     var TimelineView = AbstractView.extend({
         display_name: _lt('Timeline'),
         icon: 'fa-clock-o',
-        jsLibs: ['/web_timeline/static/lib/vis/vis-timeline-graph2d.min.js'],
-        cssLibs: ['/web_timeline/static/lib/vis/vis-timeline-graph2d.min.css'],
+        jsLibs: ['https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-timeline-graph2d.min.js'],
+        cssLibs: ['https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-timeline-graph2d.min.css'],
         config: {
             Model: TimelineModel,
             Controller: TimelineController,
