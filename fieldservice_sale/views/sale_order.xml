@@ -16,8 +16,6 @@
             </xpath>
             <xpath expr="//field[@name='partner_shipping_id']" position="after">
                 <field name="fsm_location_id"/>
-                <field name="fsm_project_id"/>
-                
             </xpath>
         </field>
     </record>
