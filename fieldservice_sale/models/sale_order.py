@@ -16,6 +16,8 @@ class SaleOrder(models.Model):
         string='Field Service orders associated to this sale')
     fsm_order_count = fields.Integer(
         string='FSM Orders', compute='_compute_fsm_order_ids')
+    fsm_project_id = fields.Many2one(
+        'project.project', string='Project')
 
     @api.multi
     @api.depends('order_line')
