@@ -10,26 +10,26 @@
     <data noupdate="0">
         <record id="group_Requester" model="res.groups">
             <field name="name">Requester</field>
-            <field name="category_id" ref="finance_e_gate.module_ESS_category"/>
+            <field name="category_id" ref="AG_Finance_E_Gate.module_ESS_category"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="group_Requester_Manager" model="res.groups">
             <field name="name">Requester Manager</field>
-            <field name="category_id" ref="finance_e_gate.module_ESS_category"/>
+            <field name="category_id" ref="AG_Finance_E_Gate.module_ESS_category"/>
             <field name="implied_ids" eval="[(4, ref('group_Requester'))]"/>
         </record>
 
         <record id="group_Accountant" model="res.groups">
             <field name="name">Accountant</field>
-            <field name="category_id" ref="finance_e_gate.module_ESS_category"/>
+            <field name="category_id" ref="AG_Finance_E_Gate.module_ESS_category"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
             <!-- <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/> -->
         </record>
 
         <record id="group_Finance_Manager" model="res.groups">
             <field name="name">Finance Manager</field>
-            <field name="category_id" ref="finance_e_gate.module_ESS_category"/>
+            <field name="category_id" ref="AG_Finance_E_Gate.module_ESS_category"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
@@ -40,25 +40,25 @@
         <field name="name">Requester Personal Requests</field>
         <field ref="model_prepayment_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False) ,('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_requester_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant prepayment request</field>
         <field ref="model_prepayment_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_requester_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO prepayment request</field>
         <field ref="model_prepayment_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_requester_man_personal_rule" model="ir.rule">
         <field name="name">Requester Manager Personal Requests</field>
         <field ref="model_prepayment_request" name="model_id"/> 
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
     <!--con ,('con','=',False) <record id="Ess_requester_man_personal_rule_tow" model="ir.rule">
@@ -81,25 +81,25 @@
         <field name="name">Perment Request Personal Requests</field>
         <field ref="model_permanent_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_permanent_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant permanent request</field>
         <field ref="model_permanent_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_permanent_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO permanent request</field>
         <field ref="model_permanent_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_permanent_man_personal_rule" model="ir.rule">
         <field name="name">permanent Request Manager Personal Requests</field>
         <field ref="model_permanent_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -107,25 +107,25 @@
         <field name="name">Credit Debit Request Personal Requests</field>
         <field ref="model_credit_debit_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_credit_debit_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant credit debit request</field>
         <field ref="model_credit_debit_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_credit_debit_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO credit debit request</field>
         <field ref="model_credit_debit_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_credit_debit_man_personal_rule" model="ir.rule">
         <field name="name">credit debit Request Manager Personal Requests</field>
         <field ref="model_credit_debit_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -133,25 +133,25 @@
         <field name="name">temporary petty request Personal Requests</field>
         <field ref="model_temporary_petty_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_temporary_petty_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant temporary petty request</field>
         <field ref="model_temporary_petty_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_temporary_petty_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO temporary petty request</field>
         <field ref="model_temporary_petty_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_temporary_petty_man_personal_rule" model="ir.rule">
         <field name="name">temporary petty Request Manager Personal Requests</field>
         <field ref="model_temporary_petty_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -159,25 +159,25 @@
         <field name="name">invoices payment request Personal Requests</field>
         <field ref="model_invoices_payment_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_invoices_payment_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant invoices payment request</field>
         <field ref="model_invoices_payment_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_invoices_payment_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO invoices payment request</field>
         <field ref="model_invoices_payment_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_invoices_payment_man_personal_rule" model="ir.rule">
         <field name="name">invoices payment Request Manager Personal Requests</field>
         <field ref="model_invoices_payment_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -185,25 +185,25 @@
         <field name="name">petty cash request Personal Requests</field>
         <field ref="model_petty_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_petty_cash_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant petty cash request</field>
         <field ref="model_petty_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_petty_cash_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO petty cash request</field>
         <field ref="model_petty_cash_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_petty_cash_man_personal_rule" model="ir.rule">
         <field name="name">petty cash Request Manager Personal Requests</field>
         <field ref="model_petty_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -211,25 +211,25 @@
         <field name="name">human resources request Personal Requests</field>
         <field ref="model_human_resources_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_human_resources_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant human resources request</field>
         <field ref="model_human_resources_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_human_resources_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO human resources request</field>
         <field ref="model_human_resources_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_human_resources_man_personal_rule" model="ir.rule">
         <field name="name">human resources Request Manager Personal Requests</field>
         <field ref="model_human_resources_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -237,25 +237,25 @@
         <field name="name">LC BG request Personal Requests</field>
         <field ref="model_lc_bg_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_lc_bg_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant LC BG request</field>
         <field ref="model_lc_bg_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_lc_bg_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO LC BG request</field>
         <field ref="model_lc_bg_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_lc_bg_man_personal_rule" model="ir.rule">
         <field name="name">LC BG Request Manager Personal Requests</field>
         <field ref="model_lc_bg_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -263,25 +263,25 @@
         <field name="name">prepayment settlement request Personal Requests</field>
         <field ref="model_prepayment_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_prepayment_settlement_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant prepayment settlement request</field>
         <field ref="model_prepayment_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_prepayment_settlement_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO prepayment settlement request</field>
         <field ref="model_prepayment_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_prepayment_settlement_man_personal_rule" model="ir.rule">
         <field name="name">prepayment settlement Request Manager Personal Requests</field>
         <field ref="model_prepayment_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -289,25 +289,25 @@
         <field name="name">prepayment petty cash settlement request Personal Requests</field>
         <field ref="model_prepayment_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_prepayment_petty_cash_settlement_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant prepayment petty cash settlement request</field>
         <field ref="model_prepayment_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_prepayment_petty_cash_settlement_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO prepayment petty cash settlement request</field>
         <field ref="model_prepayment_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_prepayment_petty_cash_settlement_man_personal_rule" model="ir.rule">
         <field name="name">prepayment petty cash settlement Request Manager Personal Requests</field>
         <field ref="model_prepayment_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -315,25 +315,25 @@
         <field name="name">temporary petty cash settlement request Personal Requests</field>
         <field ref="model_temporary_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_temporary_petty_cash_settlement_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant temporary petty cash settlement request</field>
         <field ref="model_temporary_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_temporary_petty_cash_settlement_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO temporary petty cash settlement request</field>
         <field ref="model_temporary_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_temporary_petty_cash_settlement_man_personal_rule" model="ir.rule">
         <field name="name">temporary petty cash settlement Request Manager Personal Requests</field>
         <field ref="model_temporary_petty_cash_settlement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -341,25 +341,25 @@
         <field name="name">permenant petty cash reimbursement request Personal Requests</field>
         <field ref="model_permenant_petty_cash_reimbursement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_permenant_petty_cash_reimbursement_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant permenant petty cash reimbursement request</field>
         <field ref="model_permenant_petty_cash_reimbursement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_permenant_petty_cash_reimbursement_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO permenant petty cash reimbursement request</field>
         <field ref="model_permenant_petty_cash_reimbursement_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_permenant_petty_cash_reimbursement_man_personal_rule" model="ir.rule">
         <field name="name">permenant petty cash reimbursement Request Manager Personal Requests</field>
         <field ref="model_permenant_petty_cash_reimbursement_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -367,25 +367,25 @@
         <field name="name">receipts post date cheque request Personal Requests</field>
         <field ref="model_receipts_post_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_receipts_post_date_cheque_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant receipts post date cheque invoices payment request</field>
         <field ref="model_receipts_post_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_receipts_post_date_cheque_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO receipts post date cheque invoices payment request</field>
         <field ref="model_receipts_post_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_receipts_post_date_cheque_man_personal_rule" model="ir.rule">
         <field name="name">receipts post date cheque invoices payment Request Manager Personal Requests</field>
         <field ref="model_receipts_post_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -393,25 +393,25 @@
         <field name="name">receipts current date cheque request Personal Requests</field>
         <field ref="model_receipts_current_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_receipts_current_date_cheque_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant receipts current date cheque request</field>
         <field ref="model_receipts_current_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_receipts_current_date_cheque_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO receipts current date cheque request</field>
         <field ref="model_receipts_current_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_receipts_current_date_cheque_man_personal_rule" model="ir.rule">
         <field name="name">receipts current date cheque Request Manager Personal Requests</field>
         <field ref="model_receipts_current_date_cheque_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -419,25 +419,25 @@
         <field name="name">receipts cash request Personal Requests</field>
         <field ref="model_receipts_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_receipts_cash_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant receipts cash request</field>
         <field ref="model_receipts_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_receipts_cash_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO receipts cash request</field>
         <field ref="model_receipts_cash_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_receipts_cash_man_personal_rule" model="ir.rule">
         <field name="name">receipts cash Request Manager Personal Requests</field>
         <field ref="model_receipts_cash_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -445,25 +445,25 @@
         <field name="name">intercompany transaction request Personal Requests</field>
         <field ref="model_intercompany_transaction_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_intercompany_transaction_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant intercompany transaction request</field>
         <field ref="model_intercompany_transaction_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_intercompany_transaction_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO intercompany transaction request</field>
         <field ref="model_intercompany_transaction_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_intercompany_transaction_man_personal_rule" model="ir.rule">
         <field name="name">intercompany transaction Request Manager Personal Requests</field>
         <field ref="model_intercompany_transaction_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -471,25 +471,25 @@
         <field name="name">human resources accruals request Personal Requests</field>
         <field ref="model_human_resources_accruals_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_human_resources_accruals_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant human resources accruals request</field>
         <field ref="model_human_resources_accruals_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_human_resources_accruals_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO human resources accruals request</field>
         <field ref="model_human_resources_accruals_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_human_resources_accruals_man_personal_rule" model="ir.rule">
         <field name="name">human resources accruals Request Manager Personal Requests</field>
         <field ref="model_human_resources_accruals_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -497,25 +497,25 @@
         <field name="name">preforma sales invoice request Personal Requests</field>
         <field ref="model_preforma_sales_invoice_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False),('state','!=','acc'),('state','!=','cfo'),('state','!=','teller')]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_preforma_sales_invoice_request_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant preforma sales invoice request</field>
         <field ref="model_preforma_sales_invoice_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('con','=',True),('done_man','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     <record id="Ess_preforma_sales_invoice_request_cfo_personal_rule" model="ir.rule">
         <field name="name">CFO preforma sales invoice request</field>
         <field ref="model_preforma_sales_invoice_request" name="model_id"/>
         <field name="domain_force">['|',('con','!=',False),('done_man','!=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_preforma_sales_invoice_request_man_personal_rule" model="ir.rule">
         <field name="name">preforma sales invoice Request Manager Personal Requests</field>
         <field ref="model_preforma_sales_invoice_request" name="model_id"/>
         <field name="domain_force">['|',('emp_man_user','=',user.id),('emp_man_user','=',False),('state','!=','cfo'),('con','=',True)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -524,26 +524,26 @@
         <field name="name">CFO</field>
         <field ref="model_test_logs_request" name="model_id"/>
         <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Finance_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Finance_Manager'))]"/>
     </record>
     <record id="Ess_model_test_logs_request_personal_rule" model="ir.rule">
         <field name="name">model test logs request Personal Requests</field>
         <field ref="model_test_logs_request" name="model_id"/>
         <field name="domain_force">['|',('emp_name','=',user.id),('emp_name','=',False)]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester'))]"/>
     </record>
     <record id="Ess_test_logs_request_accountant_personal_rule" model="ir.rule">
         <field name="name">Accountant test logs request request</field>
         <field ref="model_test_logs_request" name="model_id"/>
         <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Accountant'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Accountant'))]"/>
     </record>
     
     <record id="Ess_test_logs_request_man_personal_rule" model="ir.rule">
         <field name="name">invoices payment Request Manager Personal Requests</field>
         <field ref="model_test_logs_request" name="model_id"/>
         <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('finance_e_gate.group_Requester_Manager'))]"/>
+        <field name="groups" eval="[(4, ref('AG_Finance_E_Gate.group_Requester_Manager'))]"/>
     </record>
 
 
@@ -551,7 +551,7 @@
 
     <data noupdate="1">
         <record id="base.default_user" model="res.users">
-            <field name="groups_id" eval="[(4,ref('finance_e_gate.group_Requester'))]"/>
+            <field name="groups_id" eval="[(4,ref('AG_Finance_E_Gate.group_Requester'))]"/>
         </record>
     </data>
 </odoo>

@@ -9,20 +9,20 @@
             <field name="arch" type="xml">
                 <form string="Prepayment Request">
                     <header> 
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -130,20 +130,20 @@
             <field name="arch" type="xml">
                 <form string="Permanent Petty Cash Payment Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -241,20 +241,20 @@
             <field name="arch" type="xml">
                 <form string="Credit/Debit Note Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet>
@@ -374,20 +374,20 @@
             <field name="arch" type="xml">
                 <form string="Temporary Petty Cash Payment Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -491,20 +491,20 @@
             <field name="arch" type="xml">
                 <form string="Invoices Payment Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet>
@@ -643,20 +643,20 @@
             <field name="arch" type="xml">
                 <form string="Petty Cash Payment Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -760,20 +760,20 @@
             <field name="arch" type="xml">
                 <form string="Human Resources payment Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet>
@@ -908,20 +908,20 @@
             <field name="arch" type="xml">
                 <form string="LC &amp; BG Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1039,20 +1039,20 @@
             <field name="arch" type="xml">
                 <form string="Prepayment Settlement Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1170,20 +1170,20 @@
             <field name="arch" type="xml">
                 <form string="Permenant Petty Cash Settlement Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1302,20 +1302,20 @@
             <field name="arch" type="xml">
                 <form string=" Temporary Petty Cash Settlement Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1434,20 +1434,20 @@
             <field name="arch" type="xml">
                 <form string="Permenant Petty Cash Reimbursement Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1551,20 +1551,20 @@
             <field name="arch" type="xml">
                 <form string="Receipts-Post Date Cheque Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1684,20 +1684,20 @@
             <field name="arch" type="xml">
                 <form string="Receipts-Current Date Cheque Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1813,20 +1813,20 @@
             <field name="arch" type="xml">
                 <form string="Receipts-Cash Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -1930,20 +1930,20 @@
             <field name="arch" type="xml">
                 <form string="Intercompany Transaction Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -2047,20 +2047,20 @@
             <field name="arch" type="xml">
                 <form string="Human Resources Accruals Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -2285,20 +2285,20 @@
             <field name="arch" type="xml">
                 <form string="Preforma/Sales Invoice Request">
                     <header>
-                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="finance_e_gate.group_Requester"/>
-                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="finance_e_gate.group_Finance_Manager" />
-                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="finance_e_gate.group_Requester_Manager" />
-                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="finance_e_gate.group_Accountant" />
-                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="finance_e_gate.group_Accountant"/>
-                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="finance_e_gate.group_Requester_Manager"/>
-                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="finance_e_gate.group_Finance_Manager"/>
-                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="finance_e_gate.group_Finance_Manager"/>
+                        <button name="action_confirm" type="object"  class="btn-primary" attrs="{'invisible': ['|',('test2', '!=',True),('state', '!=', 'draft')]}" string="Confirm" groups="AG_Finance_E_Gate.group_Requester"/>
+                        <button name="action_man_approve" type="object" states="man" class="btn-primary" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Approve" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_acc_approve" type="object"  class="btn-primary" attrs="{'invisible': ['|',('done','!=',False),('state', '!=', 'acc')]}" string="Approve" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_cfo_approve" type="object" states="cfo" class="btn-primary" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Approve" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_man_reject" type="object" class="btn-danger" attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Reject" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_cfo_reject" type="object" class="btn-danger" attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Reject" groups="AG_Finance_E_Gate.group_Finance_Manager" />
+                        <button name="action_manager_reject" type="object" class="btn-danger" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Reject" groups="AG_Finance_E_Gate.group_Requester_Manager" />
+                        <button name="action_return" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_acc_return" type="object"  attrs="{'invisible': ['|',('done', '!=',False),('state', '!=', 'acc')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_acc_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Excuted" groups="AG_Finance_E_Gate.group_Accountant" />
+                        <button name="action_acc_not_excuted" type="object"  attrs="{'invisible': ['|',('done', '!=',True),('state', '!=', 'acc')]}" string="Not Excuted" groups="AG_Finance_E_Gate.group_Accountant"/>
+                        <button name="action_return_manager" type="object" states="man" attrs="{'invisible': ['|',('test', '!=',True),('state', '!=', 'man')]}" string="Return to Requester" groups="AG_Finance_E_Gate.group_Requester_Manager"/>
+                        <button name="action_return_acc" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Accountant"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
+                        <button name="action_return_man" type="object"  attrs="{'invisible': [('state', '!=', 'cfo')]}" string="Return to Requester Manager"  groups="AG_Finance_E_Gate.group_Finance_Manager"/>
                         <field name="state" widget="statusbar"  readonly="1"/>
                     </header>
                     <sheet >
@@ -2892,7 +2892,7 @@
         <menuitem
                 id="ess_main_menu"
                 name="Financ E-Gate"
-                web_icon="finance_e_gate,static/src/img/ESS.png"/>
+                web_icon="AG_Finance_E_Gate,static/src/img/ESS.png"/>
         <menuitem
                 id="ess_menu"
                 name="Employees services"

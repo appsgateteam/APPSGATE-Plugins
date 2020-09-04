@@ -5,7 +5,7 @@
   <data >
     <record id="prepayment_request_email_template" model="mail.template">
         <field name="name">Prepayment Request</field>
-        <field name="model_id" ref="finance_e_gate.model_prepayment_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_prepayment_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Prepayment Request (Ref ${object.name or 'n/a' })</field>
@@ -40,7 +40,7 @@
   <data>
     <record id="permanent_request_email_template" model="mail.template">
         <field name="name">Prepayment Request</field>
-        <field name="model_id" ref="finance_e_gate.model_permanent_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_permanent_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Permanent Request (Ref ${object.name or 'n/a' })</field>
@@ -71,7 +71,7 @@
   <data>
     <record id="credit_debit_request_email_template" model="mail.template">
         <field name="name">Credit/Debit Request</field>
-        <field name="model_id" ref="finance_e_gate.model_credit_debit_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_credit_debit_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Credit/Debit Request (Ref ${object.name or 'n/a' })</field>
@@ -101,7 +101,7 @@
   <data>
     <record id="temporary_petty_request_email_template" model="mail.template">
         <field name="name">Temporary Petty Request</field>
-        <field name="model_id" ref="finance_e_gate.model_temporary_petty_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_temporary_petty_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Temporary Petty  Request (Ref ${object.name or 'n/a' })</field>
@@ -131,7 +131,7 @@
   <data>
     <record id="invoices_payment_request_email_template" model="mail.template">
         <field name="name">Temporary Petty Request</field>
-        <field name="model_id" ref="finance_e_gate.model_invoices_payment_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_invoices_payment_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Temporary Petty  Request (Ref ${object.name or 'n/a' })</field>
@@ -161,7 +161,7 @@
   <data>
     <record id="petty_cash_request_email_template" model="mail.template">
         <field name="name">Petty Cash Request</field>
-        <field name="model_id" ref="finance_e_gate.model_petty_cash_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_petty_cash_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Petty Cash  Request (Ref ${object.name or 'n/a' })</field>
@@ -191,7 +191,7 @@
   <data>
     <record id="human_resources_request_email_template" model="mail.template">
         <field name="name">Human Resources  Request</field>
-        <field name="model_id" ref="finance_e_gate.model_human_resources_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_human_resources_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Human Resources Request (Ref ${object.name or 'n/a' })</field>
@@ -221,7 +221,7 @@
   <data>
     <record id="lc_bg_request_email_template" model="mail.template">
         <field name="name">LC BG  Request</field>
-        <field name="model_id" ref="finance_e_gate.model_lc_bg_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_lc_bg_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">LC BG Request (Ref ${object.name or 'n/a' })</field>
@@ -252,7 +252,7 @@
   <data>
     <record id="prepayment_settlement_request_email_template" model="mail.template">
         <field name="name">Prepayment Settlement Request</field>
-        <field name="model_id" ref="finance_e_gate.model_prepayment_settlement_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_prepayment_settlement_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Prepayment Settlement Request (Ref ${object.name or 'n/a' })</field>
@@ -282,7 +282,7 @@
   <data>
     <record id="prepayment_petty_cash_settlement_request_email_template" model="mail.template">
         <field name="name">Prepayment Petty Cash Request</field>
-        <field name="model_id" ref="finance_e_gate.model_prepayment_petty_cash_settlement_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_prepayment_petty_cash_settlement_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Prepayment Petty Cash Request (Ref ${object.name or 'n/a' })</field>
@@ -312,7 +312,7 @@
   <data>
     <record id="temporary_petty_cash_settlement_request_email_template" model="mail.template">
         <field name="name">Temporary Petty Cash Settlement Request</field>
-        <field name="model_id" ref="finance_e_gate.model_temporary_petty_cash_settlement_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_temporary_petty_cash_settlement_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Temporary Petty Cash Settlement Request (Ref ${object.name or 'n/a' })</field>
@@ -342,7 +342,7 @@
   <data>
     <record id="permenant_petty_cash_reimbursement_request_email_template" model="mail.template">
         <field name="name">Permenant Petty Cash Reimbursement Request</field>
-        <field name="model_id" ref="finance_e_gate.model_permenant_petty_cash_reimbursement_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_permenant_petty_cash_reimbursement_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Permenant Petty Cash Reimbursement Request (Ref ${object.name or 'n/a' })</field>
@@ -372,7 +372,7 @@
   <data>
     <record id="receipts_post_date_cheque_request_email_template" model="mail.template">
         <field name="name">Receipts Post Date Cheque  Request</field>
-        <field name="model_id" ref="finance_e_gate.model_receipts_post_date_cheque_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_receipts_post_date_cheque_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Receipts Post Date Cheque Request (Ref ${object.name or 'n/a' })</field>
@@ -402,7 +402,7 @@
   <data>
     <record id="receipts_current_date_cheque_request_email_template" model="mail.template">
         <field name="name">Receipts Current Date Cheque  Request</field>
-        <field name="model_id" ref="finance_e_gate.model_receipts_current_date_cheque_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_receipts_current_date_cheque_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Receipts Current Date Cheque Request (Ref ${object.name or 'n/a' })</field>
@@ -432,7 +432,7 @@
   <data>
     <record id="receipts_cash_request_email_template" model="mail.template">
         <field name="name">Receipts Cash Request</field>
-        <field name="model_id" ref="finance_e_gate.model_receipts_cash_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_receipts_cash_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Receipts Cash Request (Ref ${object.name or 'n/a' })</field>
@@ -462,7 +462,7 @@
   <data>
     <record id="intercompany_transaction_request_email_template" model="mail.template">
         <field name="name">Intercompany Transaction Request</field>
-        <field name="model_id" ref="finance_e_gate.model_intercompany_transaction_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_intercompany_transaction_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Intercompany Transaction Request (Ref ${object.name or 'n/a' })</field>
@@ -492,7 +492,7 @@
   <data>
     <record id="human_resources_accruals_request_email_template" model="mail.template">
         <field name="name">Human Resources Accruals Request</field>
-        <field name="model_id" ref="finance_e_gate.model_human_resources_accruals_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_human_resources_accruals_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Human Resources Accruals Request (Ref ${object.name or 'n/a' })</field>
@@ -522,7 +522,7 @@
   <data>
     <record id="preforma_sales_invoice_request_email_template" model="mail.template">
         <field name="name">Preforma/Sales Invoice Request</field>
-        <field name="model_id" ref="finance_e_gate.model_preforma_sales_invoice_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_preforma_sales_invoice_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">Preforma/Sales Invoice Request (Ref ${object.name or 'n/a' })</field>
@@ -553,7 +553,7 @@
   <data>
     <record id="test_logs_email_template" model="mail.template">
         <field name="name">TEST LOGS</field>
-        <field name="model_id" ref="finance_e_gate.model_test_logs_request"/>
+        <field name="model_id" ref="AG_Finance_E_Gate.model_test_logs_request"/>
         <field name="email_from">${object.emp_name.login}</field>
         <field name="email_to">${object.emp_name.login}</field>
         <field name="subject">TEST LOGS (Ref ${object.name or 'n/a' })</field>

@@ -120,7 +120,7 @@ class employee_service(models.Model):
             com = self.env['hr.employee'].search([('id','=',rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.prepayment_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.prepayment_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -410,7 +410,7 @@ class employee_service_permanent(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.permanent_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.permanent_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -703,7 +703,7 @@ class employee_service_credit_debit(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.credit_debit_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.credit_debit_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -997,7 +997,7 @@ class employee_service_temporary_Petty(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.temporary_petty_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.temporary_petty_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -1318,7 +1318,7 @@ class employee_service_invoices_payment(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.invoices_payment_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.invoices_payment_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -1612,7 +1612,7 @@ class employee_service_Petty_cash(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.petty_cash_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.petty_cash_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -1930,7 +1930,7 @@ class employee_service_human_resources(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.human_resources_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.human_resources_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -2226,7 +2226,7 @@ class employee_service_lc_bg(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.lc_bg_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.lc_bg_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -2548,7 +2548,7 @@ class employee_service_prepayment_settlement(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.prepayment_settlement_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.prepayment_settlement_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -2871,7 +2871,7 @@ class employee_service_prepayment_petty_cash_settlement(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.prepayment_petty_cash_settlement_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.prepayment_petty_cash_settlement_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -3194,7 +3194,7 @@ class employee_service_temporary_petty_cash_settlement(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.temporary_petty_cash_settlement_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.temporary_petty_cash_settlement_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -3483,7 +3483,7 @@ class employee_service_permenant_petty_cash_reimbursement(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.permenant_petty_cash_reimbursement_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.permenant_petty_cash_reimbursement_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -3787,7 +3787,7 @@ class employee_service_receipts_post_date_cheque(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.receipts_post_date_cheque_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.receipts_post_date_cheque_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -4084,7 +4084,7 @@ class employee_service_receipts_current_date_cheque(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.receipts_current_date_cheque_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.receipts_current_date_cheque_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -4377,7 +4377,7 @@ class employee_service_receipts_cash(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.receipts_cash_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.receipts_cash_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -4664,7 +4664,7 @@ class employee_service_intercompany_transaction(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.intercompany_transaction_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.intercompany_transaction_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -4977,7 +4977,7 @@ class employee_service_human_resources_accruals(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.human_resources_accruals_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.human_resources_accruals_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -5272,7 +5272,7 @@ class employee_service_preforma_sales_invoice(models.Model):
             com = self.env['hr.employee'].search([('id', '=', rec.emp_man_id)])
             for l in com:
                 email = l.work_email
-        template = self.env.ref('finance_e_gate.preforma_sales_invoice_request_email_template')
+        template = self.env.ref('AG_Finance_E_Gate.preforma_sales_invoice_request_email_template')
         template.write({'email_to': email})
         template.send_mail(self.ids[0], force_send=True)
         log = self.env['test.logs.request']
@@ -5510,58 +5510,58 @@ class dashbord_kanban(models.Model):
         return action
 
     def get_action_prepayment_tree(self):
-        return self._get_action('finance_e_gate.prepayment_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.prepayment_request_menu_action')
 
     def get_action_permanent_tree_backorder(self):
-        return self._get_action('finance_e_gate.permanent_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.permanent_request_menu_action')
 
     def get_action_credit_tree_waiting(self):
-        return self._get_action('finance_e_gate.credit_debit_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.credit_debit_request_menu_action')
 
     def get_action_temporary_tree_ready(self):
-        return self._get_action('finance_e_gate.temporary_petty_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.temporary_petty_request_menu_action')
 
     def get_stock_invoices_action_picking_type(self):
-        return self._get_action('finance_e_gate.invoices_payment_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.invoices_payment_request_menu_action')
 
     def get_petty_cash_action_picking_type(self):
-        return self._get_action('finance_e_gate.petty_cash_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.petty_cash_request_menu_action')
 
     def get_stock_human_resources_action_picking_type(self):
-        return self._get_action('finance_e_gate.human_resources_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.human_resources_request_menu_action')
 
     def get_lc_bg_action_picking_type(self):
-        return self._get_action('finance_e_gate.lc_bg_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.lc_bg_request_menu_action')
 
     def get_prepayment_settlement_action_picking_type(self):
-        return self._get_action('finance_e_gate.prepayment_settlement_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.prepayment_settlement_request_menu_action')
 
     def get_prepayment_petty_action_picking_type(self):
-        return self._get_action('finance_e_gate.prepayment_petty_cash_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.prepayment_petty_cash_request_menu_action')
 
     def get_temporary_petty_cash_settlement_action_picking_type(self):
-        return self._get_action('finance_e_gate.temporary_petty_cash_settlement_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.temporary_petty_cash_settlement_request_menu_action')
 
     def get_permenant_petty_cash_reimbursement_action_picking_type(self):
-        return self._get_action('finance_e_gate.permenant_petty_cash_reimbursement_request_tree')
+        return self._get_action('AG_Finance_E_Gate.permenant_petty_cash_reimbursement_request_tree')
 
     def get_receipts_post_date_cheque_action_picking_type(self):
-        return self._get_action('finance_e_gate.receipts_post_date_cheque_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.receipts_post_date_cheque_request_menu_action')
 
     def get_receipts_current_date_cheque_action_picking_type(self):
-        return self._get_action('finance_e_gate.receipts_current_date_cheque_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.receipts_current_date_cheque_request_menu_action')
 
     def get_receipts_cash_request_menu_action_action_picking_type(self):
-        return self._get_action('finance_e_gate.receipts_cash_request_menu_action')
+        return self._get_action('AG_Finance_E_Gate.receipts_cash_request_menu_action')
 
     def get_intercompany_transaction_action_picking_type(self):
-        return self._get_action('finance_e_gate.intercompany_transaction_menu_action')
+        return self._get_action('AG_Finance_E_Gate.intercompany_transaction_menu_action')
 
     def get_human_resources_accruals_action_picking_type(self):
-        return self._get_action('finance_e_gate.human_resources_accruals_menu_action')
+        return self._get_action('AG_Finance_E_Gate.human_resources_accruals_menu_action')
 
     def get_preforma_sales_invoice_menu_action_action_picking_type(self):
-        return self._get_action('finance_e_gate.preforma_sales_invoice_menu_action')
+        return self._get_action('AG_Finance_E_Gate.preforma_sales_invoice_menu_action')
 
 
 
