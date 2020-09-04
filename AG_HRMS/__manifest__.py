@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Hr_enhancement',
+    'name': 'AG_HRMS',
     'summary': 'Hr Customization',
     'depends': ['hr_payroll','base','hr','hr_expense'],
     'data': [
