@@ -90,8 +90,8 @@ class FSMLocation(models.Model):
     def name_search(self, name, args=None, operator='ilike', limit=100):
         args = args or []
         recs = self.browse()
-        # if name:
-        #     recs = self.search([('ref', 'ilike', name)] + args, limit=limit)
+        if name:
+            recs = self.search([('ref', 'ilike', name)] + args, limit=limit)
         # if not recs and self.env.user.company_id.search_on_complete_name:
         #     recs = self.\
         #         search([('complete_name',
