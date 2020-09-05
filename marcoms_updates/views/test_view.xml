@@ -1071,13 +1071,14 @@ if record:
             </xpath>
 
             
-            <xpath expr="//button[@name='action_confirm']" position="replace">
-                <button name="action_to_approve" type="object" states="draft" string="Confirm" class="oe_highlight" />
-                <button name="action_confirm" id="action_confirm"
-                        string="Confirm" class="btn-primary" type="object" states="sent"
-                         groups="sales_team.group_sale_manager"/>
-                <button name="action_approved" type="object" states="approve" string="Approve"  class="oe_highlight" groups="marcoms_updates.group_sale_top_manager"/>
-                <button name="action_to_Reject" type="object" states="approve" string="Reject"  class="btn-danger" groups="marcoms_updates.group_sale_top_manager"/>
+            <xpath expr="//button[@id='action_confirm']" position="replace">
+                <button name="action_to_approve" type="object" states="draft" string="Confirm" class="oe_highlight"/>
+                <button name="action_confirm" id="action_confirm" string="Confirm" class="btn-primary" type="object" states="sent" groups="sales_team.group_sale_manager"/>
+                <button name="action_approved" type="object" states="approve" string="Approve" class="oe_highlight" groups="marcoms_updates.group_sale_top_manager"/>
+                <button name="action_to_Reject" type="object" states="approve" string="Reject" class="btn-danger" groups="marcoms_updates.group_sale_top_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="replace">
+              
             </xpath>
             <xpath expr="//page[@name='order_lines']//field[@name='order_line']/tree//field[@name='analytic_tag_ids']" position="attributes">
                 <attribute name="invisible">1</attribute>
