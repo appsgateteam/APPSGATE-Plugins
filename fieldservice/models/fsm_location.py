@@ -66,15 +66,15 @@ class FSMLocation(models.Model):
         for loc in self:
             if loc.fsm_parent_id:
                 if loc.ref:
-                    loc.complete_name = '%s / [%s] %s' % (
+                    loc.complete_name = """%s / [%s] %s""" % (
                         loc.fsm_parent_id.complete_name, loc.ref,
                         loc.partner_id.name)
                 else:
-                    loc.complete_name = '%s / %s' % (
+                    loc.complete_name = """%s / %s""" % (
                         loc.fsm_parent_id.complete_name, loc.partner_id.name)
             else:
                 if loc.ref:
-                    loc.complete_name = '[%s] %s' % (loc.ref,
+                    loc.complete_name = """[%s] %s""" % (loc.ref,
                                                      loc.partner_id.name)
                 else:
                     loc.complete_name = loc.partner_id.name
@@ -95,7 +95,7 @@ class FSMLocation(models.Model):
         if not recs and self.env.user.company_id.search_on_complete_name:
             recs = self.search([('complete_name',operator, name)] + args, limit=limit)
         if not recs and not self.env.user.company_id.search_on_complete_name:
-            recs = self.search([('name', operator, name)] , limit=limit)
+            recs = self.search([('name', operator, name)] + args, limit=limit)
         return recs.name_get()
 
     _sql_constraints = [('fsm_location_ref_uniq', 'unique (ref)',
