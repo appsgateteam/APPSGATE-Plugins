@@ -64,19 +64,20 @@ class FSMLocation(models.Model):
     @api.depends('partner_id.name', 'fsm_parent_id.complete_name', 'ref')
     def _compute_complete_name(self):
         for loc in self:
-            if loc.fsm_parent_id:
-                if loc.ref:
-                    loc.complete_name = """%s / [%s] %s""" % (loc.fsm_parent_id.complete_name, loc.ref,loc.partner_id.name)
-                else:
-                    loc.complete_name = """%s / %s""" % (loc.fsm_parent_id.complete_name, loc.partner_id.name)
-            else:
-                if loc.ref:
-                    loc.complete_name = """[%s] %s""" % (loc.ref,loc.partner_id.name)
-                else:
-                    if loc.partner_id.name:
-                        loc.complete_name = loc.partner_id.name
-                    else:
-                        loc.complete_name = loc.name
+            loc.complete_name = loc.name
+            # if loc.fsm_parent_id:
+            #     if loc.ref:
+            #         loc.complete_name = """%s / [%s] %s""" % (loc.fsm_parent_id.complete_name, loc.ref,loc.partner_id.name)
+            #     else:
+            #         loc.complete_name = """%s / %s""" % (loc.fsm_parent_id.complete_name, loc.partner_id.name)
+            # else:
+            #     if loc.ref:
+            #         loc.complete_name = """[%s] %s""" % (loc.ref,loc.partner_id.name)
+            #     else:
+            #         if loc.partner_id.name:
+            #             loc.complete_name = loc.partner_id.name
+            #         else:
+            #             loc.complete_name = loc.name
 
     @api.multi
     def name_get(self):
