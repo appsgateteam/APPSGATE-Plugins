@@ -1392,16 +1392,16 @@ Sincerely,"""  % (rec.partner_id.name, rec.project_name, rec.remaining_dates)
         if self.env['ir.config_parameter'].sudo().get_param('sale.auto_done_setting'):
             self.action_done()
 
-        sale_order = self.env['sale.order'].search([('opportunity_id','=',self.opportunity_id.id)])
-        job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
-        if job_obj:
-            for sale in sale_order:
-                if sale.state == 'sale':
-                    for k in job_obj:
-                        k.write({'stage_id': 9})
-                else:
-                    for l in job_obj:
-                        l.write({'stage_id': 13,'probability':70})
+        # sale_order = self.env['sale.order'].search([('opportunity_id','=',self.opportunity_id.id)])
+        # job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
+        # if job_obj:
+        #     for sale in sale_order:
+        #         if sale.state == 'sale':
+        #             for k in job_obj:
+        #                 k.write({'stage_id': 9})
+        #         else:
+        #             for l in job_obj:
+        #                 l.write({'stage_id': 13,'probability':70})
 
 
         channel_all_employees = self.env.ref('marcoms_updates.channel_all_confirmed_sales').read()[0]
@@ -1421,10 +1421,10 @@ Sincerely,"""  % (rec.partner_id.name, rec.project_name, rec.remaining_dates)
 
     @api.multi
     def action_to_approve(self):
-        job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
-        if job_obj:
-            for k in job_obj:
-                k.write({'stage_id': 6}) 
+        # job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
+        # if job_obj:
+        #     for k in job_obj:
+        #         k.write({'stage_id': 6}) 
         channel_all_employees = self.env.ref('marcoms_updates.channel_all_pending_approvals').read()[0]
         template_new_employee = self.env.ref('marcoms_updates.email_template_data_pending_approvals').read()[0]
         # raise ValidationError(_(template_new_employee))
@@ -1441,19 +1441,19 @@ Sincerely,"""  % (rec.partner_id.name, rec.project_name, rec.remaining_dates)
 
     @api.multi
     def action_to_Reject(self):
-        job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
-        if job_obj:
-            for k in job_obj:
-                k.write({'stage_id': 8}) 
+        # job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
+        # if job_obj:
+        #     for k in job_obj:
+        #         k.write({'stage_id': 8}) 
         return self.write({'state': 'reject'})
 
     @api.multi
     def action_approved(self):
-        job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
+        # job_obj = self.env['crm.lead'].search([('id','=',self.opportunity_id.id)])
         
-        if job_obj:
-            for k in job_obj:
-                k.write({'stage_id': 7}) 
+        # if job_obj:
+        #     for k in job_obj:
+        #         k.write({'stage_id': 7}) 
         com = self.env['hr.employee'].search([('user_id','=',self.env.uid)])
         return self.write({'state': 'sent'})
 
