@@ -64,39 +64,38 @@ class FSMLocation(models.Model):
     @api.depends('partner_id.name', 'fsm_parent_id.complete_name', 'ref')
     def _compute_complete_name(self):
         for loc in self:
-            loc.complete_name = loc.name
-            # if loc.fsm_parent_id:
-            #     if loc.ref:
-            #         loc.complete_name = """%s / [%s] %s""" % (loc.fsm_parent_id.complete_name, loc.ref,loc.partner_id.name)
-            #     else:
-            #         loc.complete_name = """%s / %s""" % (loc.fsm_parent_id.complete_name, loc.partner_id.name)
-            # else:
-            #     if loc.ref:
-            #         loc.complete_name = """[%s] %s""" % (loc.ref,loc.partner_id.name)
-            #     else:
-            #         if loc.partner_id.name:
-            #             loc.complete_name = loc.partner_id.name
-            #         else:
-            #             loc.complete_name = loc.name
+            if loc.fsm_parent_id:
+                if loc.ref:
+                    loc.complete_name = """%s / [%s] %s""" % (loc.fsm_parent_id.complete_name, loc.ref,loc.partner_id.name)
+                else:
+                    loc.complete_name = """%s / %s""" % (loc.fsm_parent_id.complete_name, loc.partner_id.name)
+            else:
+                if loc.ref:
+                    loc.complete_name = """[%s] %s""" % (loc.ref,loc.partner_id.name)
+                else:
+                    if loc.partner_id.name:
+                        loc.complete_name = loc.partner_id.name
+                    else:
+                        loc.complete_name = loc.name
 
-    @api.multi
-    def name_get(self):
-        results = []
-        for rec in self:
-            results.append((rec.id, rec.complete_name))
-        return results
+    # @api.multi
+    # def name_get(self):
+    #     results = []
+    #     for rec in self:
+    #         results.append((rec.id, rec.complete_name))
+    #     return results
 
-    @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        args = args or []
-        recs = self.browse()
-        if name:
-            recs = self.search([('ref', 'ilike', name)] + args, limit=limit)
-        if not recs and self.env.user.company_id.search_on_complete_name:
-            recs = self.search([('complete_name',operator, name)] + args, limit=limit)
-        if not recs and not self.env.user.company_id.search_on_complete_name:
-            recs = self.search([('name', operator, name)] + args, limit=limit)
-        return recs.name_get()
+    # @api.model
+    # def name_search(self, name, args=None, operator='ilike', limit=100):
+    #     args = args or []
+    #     recs = self.browse()
+    #     if name:
+    #         recs = self.search([('ref', 'ilike', name)] + args, limit=limit)
+    #     if not recs and self.env.user.company_id.search_on_complete_name:
+    #         recs = self.search([('complete_name',operator, name)] + args, limit=limit)
+    #     if not recs and not self.env.user.company_id.search_on_complete_name:
+    #         recs = self.search([('name', operator, name)] + args, limit=limit)
+    #     return recs.name_get()
 
     _sql_constraints = [('fsm_location_ref_uniq', 'unique (ref)',
                          'This internal reference already exists!')]
