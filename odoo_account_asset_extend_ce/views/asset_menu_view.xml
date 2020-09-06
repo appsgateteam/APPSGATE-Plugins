@@ -5,6 +5,7 @@
         <menuitem 
             id="asset_top_menu" 
             name="Assets" 
+            web_icon="odoo_account_asset_extend_ce,static/description/icon.png"
             groups="odoo_account_asset_extend_ce.group_asset_employee,odoo_account_asset_extend_ce.group_asset_user,odoo_account_asset_extend_ce.group_asset_manager"/>
 
         <!-- Asset main menu -->
