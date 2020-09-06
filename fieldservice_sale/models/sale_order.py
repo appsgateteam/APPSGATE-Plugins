@@ -18,6 +18,7 @@ class SaleOrder(models.Model):
         string='FSM Orders', compute='_compute_fsm_order_ids')
     fsm_project_id = fields.Many2one(
         'project.project', string='Project')
+    confirmation_date = fields.Datetime(string='Confirmation Date', readonly=False, index=True, help="Date on which the sales order is confirmed.", oldname="date_confirm", copy=False)
 
     @api.multi
     @api.depends('order_line')
