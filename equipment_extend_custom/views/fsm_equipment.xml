@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fsm_equipment_form_view_inherit_warranty" model="ir.ui.view">
+            <field name="name">fsm.equipment.form.inherit.warranty_details</field>
+            <field name="model">fsm.equipment</field>
+            <field name="inherit_id" ref="fieldservice.fsm_equipment_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string='Warranty Details' name='Warranty Details'>
+                        <group>
+                            <group>
+                                <field name="warranty_information_custom"/>
+                                <field name="warranty_date_custom"/>
+                                <field name="warranty_service_provider_custom_id"/>
+                            </group>
+                            <group>
+                                <field name="manufacturer_custom"/>
+                                <field name="record_brand_custom"/>
+                                <field name="model_number_custom"/>
+                                <field name="serial_number_custom"/>
+                                <field name="received_date_custom"/>
+                            </group>
+                        </group>
+                    </page>
+                    
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
