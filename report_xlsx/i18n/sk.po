@@ -6,21 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2019-08-14 13:44+0000\n"
-"Last-Translator: Pedro Castro Silva <pedrocs@exo.pt>\n"
+"PO-Revision-Date: 2020-08-15 23:59+0000\n"
+"Last-Translator: Jan Prokop <jprokop@jackie.sk>\n"
 "Language-Team: none\n"
-"Language: pt\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: report_xlsx
 #: code:addons/report_xlsx/models/ir_report.py:18
 #, python-format
 msgid "%s model was not found"
-msgstr "O modelo %s não foi encontrado"
+msgstr "Model %s sa nenašiel"
 
 #. module: report_xlsx
 #. openerp-web
@@ -30,19 +30,20 @@ msgid ""
 "A popup window with your report was blocked. You may need to change your "
 "browser settings to allow popup windows for this page."
 msgstr ""
-"Uma janela popup com o seu relatório foi bloqueada. Pode necessitar de mudar "
-"as configurações do browser para permitir janelas popup nesta página."
+"Kontextové okno s vašou správou bolo zablokované. Možno budete musieť zmeniť "
+"nastavenia svojho prehliadača, aby ste mohli povoliť kontextové okná pre "
+"túto stránku."
 
 #. module: report_xlsx
 #: model:ir.model,name:report_xlsx.model_report_report_xlsx_abstract
 msgid "Abstract XLSX Report"
-msgstr "Relatório XLSX Abstrato"
+msgstr "Abstrakt výkaz XLSX"
 
 #. module: report_xlsx
 #: model:ir.model.fields,field_description:report_xlsx.field_report_report_xlsx_abstract__display_name
 #: model:ir.model.fields,field_description:report_xlsx.field_report_report_xlsx_partner_xlsx__display_name
 msgid "Display Name"
-msgstr "Nome a Exibir"
+msgstr "Zobrazený názov"
 
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
@@ -59,7 +60,7 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:report_xlsx.field_report_report_xlsx_abstract____last_update
 #: model:ir.model.fields,field_description:report_xlsx.field_report_report_xlsx_partner_xlsx____last_update
 msgid "Last Modified on"
-msgstr "Última Modificação em"
+msgstr "Posledná zmena"
 
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
@@ -69,22 +70,22 @@ msgstr "PDF"
 #. module: report_xlsx
 #: model:ir.actions.report,name:report_xlsx.partner_xlsx
 msgid "Print to XLSX"
-msgstr "Imprimir para XLSX"
+msgstr "Tlač do XLSX"
 
 #. module: report_xlsx
 #: model:ir.model,name:report_xlsx.model_ir_actions_report
 msgid "Report Action"
-msgstr "Ação do Relatório"
+msgstr "Akcia výkazu"
 
 #. module: report_xlsx
 #: model:ir.model.fields,field_description:report_xlsx.field_ir_actions_report__report_type
 msgid "Report Type"
-msgstr "Tipo de Relatório"
+msgstr "Typ výkazu"
 
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
 msgid "Text"
-msgstr "Texto"
+msgstr "Text"
 
 #. module: report_xlsx
 #: model:ir.model.fields,help:report_xlsx.field_ir_actions_report__report_type
@@ -94,17 +95,17 @@ msgid ""
 "browser PDF means the report will be rendered using Wkhtmltopdf and "
 "downloaded by the user."
 msgstr ""
-"O tipo de relatório que será produzido, tendo cada qual o seu método de "
-"produção. HTML significa que o relatório será aberto diretamente  no seu "
-"browser. PDF indica que o relatório será produzido com o Wkhtmltopdf e "
-"descarregado pelo utilizador."
+"Typ správy, ktorá sa má vykresliť, pričom každá z nich má svoju vlastnú "
+"metódu vykresľovania. HTML znamená, že sa prehľad otvorí priamo vo vašom "
+"prehliadači. PDF znamená, že sa prehľad vygeneruje pomocou Wkhtmltopdf a "
+"stiahne si ho používateľ."
 
 #. module: report_xlsx
 #. openerp-web
 #: code:addons/report_xlsx/static/src/js/report/action_manager_report.js:52
 #, python-format
 msgid "Warning"
-msgstr "Aviso"
+msgstr "Varovanie"
 
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
@@ -119,7 +120,7 @@ msgstr "XML"
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
 msgid "csv"
-msgstr ""
+msgstr "csv"
 
 #. module: report_xlsx
 #: selection:ir.actions.report,report_type:0
