@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_service_time_slot_form" model="ir.ui.view">
+            <field name="name">view.service.time.slot.form</field>
+            <field name="model">service.time.slot</field>
+            <field name="arch" type="xml">
+                <form string="Service Time Slots" create="false" delete="false" edit="false">
+                    <sheet>
+                    <group>
+                        <group>
+                            <field name="name" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+       <record id="view_service_time_slot_tree" model="ir.ui.view">
+            <field name="name">view.service.time.slot.tree</field>
+            <field name="model">service.time.slot</field>
+            <field name="arch" type="xml">
+                <tree string="Service Time Slots" create="false" editable="bottom">
+                    <field name="name" widget="float_time"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_service_time_slot_filter" model="ir.ui.view">
+            <field name="name">service.time.slot.select</field>
+            <field name="model">service.time.slot</field>
+            <field name="arch" type="xml">
+                <search string="Service Time Slots">
+                    <field name="name"/>
+                    <separator/>
+                    <filter string="All" name="all" domain="['|', ('active', '=', False), ('active', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_service_time_slot" model="ir.actions.act_window">
+            <field name="name">Service Time Slots</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">service.time.slot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_all': 1}</field>
+        </record>
+
+
+    </data>
+</odoo>

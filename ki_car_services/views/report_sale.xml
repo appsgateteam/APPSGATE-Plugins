@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_saleorder_document_car" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//div[@id='informations']" position="after">
+        <div class="row mb32" id="service_informations">
+            <div t-if="doc.car_id" class="col-2">
+                <strong>Car:</strong>
+                <p class="m-0" t-field="doc.car_id"/>
+            </div>
+            <div t-if="doc.service_schedule_date" class="col-3">
+                <strong>Schedule Date:</strong>
+                <p class="m-0" t-field="doc.service_schedule_date"/>
+            </div>
+            <div t-if="doc.is_pick_up" class="col-2">
+                <strong>Car Pickup:</strong>
+                <p class="m-0" t-field="doc.is_pick_up"/>
+            </div>
+            <div t-if="doc.car_number" class="col-3">
+                <strong>Car Number:</strong>
+                <p class="m-0" t-field="doc.car_number"/>
+            </div>
+            <div t-if="doc.pickup_address" class="col-3">
+                <strong>Pickup Address:</strong>
+                <p class="m-0" t-field="doc.pickup_address"/>
+            </div>
+        </div>
+    </xpath>
+</template>
+
+</odoo>

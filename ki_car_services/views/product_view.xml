@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_inherit_service" model="ir.ui.view">
+        <field name="name">product.template.common.form.inherit.service</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']//div[last()]" position="after">
+                <div>
+                    <field name="is_car_service"/>
+                    <label for="is_car_service"/>
+                </div>
+            </xpath>
+            <xpath expr="//page[last()]" position="after">
+                <page string="Services" attrs="{'invisible': [('is_car_service', '=', False)]}">
+                    <group string="Package Includes Below Services">
+                        <field name="service_type_ids" nolabel="1"/>
+                    </group>
+                    <group  string="Package Available For Below Cars">
+                        <field name="vehical_ids" nolabel="1"/>
+                    </group>
+                </page>
+            </xpath>
+            
+        </field>
+    </record>
+
+</odoo>

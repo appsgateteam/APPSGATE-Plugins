@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="data_slot_1" model="service.time.slot">
+            <field name="name">1.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="data_slot_2" model="service.time.slot">
+            <field name="name">2.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="data_slot_3" model="service.time.slot">
+            <field name="name">3.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="data_slot_4" model="service.time.slot">
+            <field name="name">4.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_5" model="service.time.slot">
+            <field name="name">5.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_6" model="service.time.slot">
+            <field name="name">6.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_7" model="service.time.slot">
+            <field name="name">7.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_8" model="service.time.slot">
+            <field name="name">8.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_9" model="service.time.slot">
+            <field name="name">9.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_10" model="service.time.slot">
+            <field name="name">10.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_11" model="service.time.slot">
+            <field name="name">11.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_12" model="service.time.slot">
+            <field name="name">12.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_13" model="service.time.slot">
+            <field name="name">13.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_14" model="service.time.slot">
+            <field name="name">14.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_15" model="service.time.slot">
+            <field name="name">15.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_16" model="service.time.slot">
+            <field name="name">16.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_17" model="service.time.slot">
+            <field name="name">17.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_18" model="service.time.slot">
+            <field name="name">18.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_19" model="service.time.slot">
+            <field name="name">19.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_20" model="service.time.slot">
+            <field name="name">20.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_21" model="service.time.slot">
+            <field name="name">21.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_22" model="service.time.slot">
+            <field name="name">22.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_23" model="service.time.slot">
+            <field name="name">23.0</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_slot_24" model="service.time.slot">
+            <field name="name">24.0</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

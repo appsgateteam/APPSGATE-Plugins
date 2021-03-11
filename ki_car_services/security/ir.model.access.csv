@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_service_time_slot_public,access.service.time.slot.public,model_service_time_slot,,1,0,0,0
+access_service_time_slot_sale_manager,access.service.time.slot.sale.manager,model_service_time_slot,sales_team.group_sale_manager,1,1,1,1
+access_service_time_slot_fleet_manager,access.service.time.slot.fleet.manager,model_service_time_slot,fleet.fleet_group_manager,1,1,1,1

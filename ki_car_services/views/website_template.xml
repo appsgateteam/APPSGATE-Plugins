@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="assets_frontend" inherit_id="website.assets_frontend"
+            name="Survey assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript"
+                    src="ki_car_services/static/src/js/website.js" />
+            <link type="text/css" rel="stylesheet" href="ki_car_services/static/src/css/website.css"/>
+
+            </xpath>
+        </template>
+
+        <template id="template_car_selection" name="Select Car">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure oe_empty">
+                        <div class="container">
+                            <h1 class="mt32 text-center">Select Car</h1>
+                            <form action="/car/services" method="post"
+                                class=''>
+                                <input type="hidden" name="csrf_token"
+                                    t-att-value="request.csrf_token()" />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <select name="brand_id"
+                                            class="form-control brand_id">
+                                            <t t-foreach="brands"
+                                                t-as="brand">
+                                                <option
+                                                    t-att-value="brand.id"
+                                                    t-att-selected="(order and order.car_id and order.car_id.brand_id.id == brand.id) and 'selected' or null">
+                                                    <span t-field="brand.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select name="car_id"
+                                            class="form-control">
+                                            <option value=""></option>
+                                            <t t-foreach="cars" t-as="car">
+                                                <option class="car"
+                                                    t-att-value="car.id"
+                                                    t-att-brand="car.brand_id.id"
+                                                    t-att-selected="(order and order.car_id and order.car_id.id == car.id) and 'selected' or null">
+                                                    <span t-field="car.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit"
+                                            class="btn btn-secondary oe_search_button"
+                                            aria-label="Find Services"
+                                            title="Find Services">
+                                            <i class="fa fa-search" />
+                                            Find Services
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="template_car_services" name="Select Car">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure oe_empty">
+                        <div class="container">
+                            <div class="row mt32 mb32">
+                                <div class="col-md-10">
+                                    <h1 class="text-center"><strong><u><i>Select Service Packages</i></u></strong></h1>
+                                </div>
+                                <div class="col-md-2">
+                                    <t t-call="website_sale.pricelist_list">
+                                        <t t-set="_classes">col-md-2</t>
+                                    </t>
+                                </div>
+                            </div>
+                            
+                                <t t-foreach="products.mapped('categ_id')" t-as="categ_id">
+                                <h3><strong t-field="categ_id.name"/></h3>
+                                <div class="row">
+                                <t t-foreach="products.filtered(lambda i: i.categ_id == categ_id)" t-as="product">
+
+                                    <div t-if="product_index % 3 == 0"
+                                        class="clearfix" />
+
+
+                                    <div class="col-md-4 mb32">
+                                        <h4 class="card-header">
+                                            <strong t-field="product.name" />
+                                        </h4>
+                                        <div class="card card-body">
+                                            <form
+                                                t-att-action="'/car/add/service/' + str(product.id)"
+                                                method="post" class=''>
+                                                <input type="hidden"
+                                                    name="csrf_token"
+                                                    t-att-value="request.csrf_token()" />
+                                                <input type="hidden"
+                                                    name="car_id" class="form-control"
+                                                    t-att-value="car_id" />
+                                                <div>
+                                                    <ul class="list-unstyled">
+                                                        <t
+                                                            t-foreach="product.service_type_ids"
+                                                            t-as="service">
+                                                            <li>
+                                                                <i
+                                                                    class="fa fa-check text-primary"
+                                                                    style="color: #2F4F4F !important;"></i>
+                                                                <span
+                                                                    t-field="service.name" />
+                                                            </li>
+                                                        </t>
+                                                    </ul>
+                                                    <strong
+                                                        t-esc="product._get_combination_info()['price']"
+                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                                        style="font-size: 20px;"/>
+                                                    <button
+                                                        class="btn btn-sm btn-success pull-right">Add to
+                                                        Cart
+                                                    </button>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+
+                                </t>
+                                </div>
+                                </t>
+                            <div class="row mb32">
+                                <div class="col-md-8">
+                                    <div class="alert alert-danger" role="alert"  t-if="error_code and error_code == 1">
+                                        <strong>Please select any service package to proceed ahead!</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="/car/service/process"
+                                        class="btn btn-primary pull-right">
+                                        Schedule Your Service <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="template_car_services_date_select" name="Select Car">
+            <t t-call="website.layout">
+                <div id="wrap">
+                    <div class="oe_structure oe_empty">
+                        <div class="container">
+                        <form action="/car/services/process/cart" method="post"
+                                class=''>
+                                <input type="hidden" name="csrf_token"
+                                    t-att-value="request.csrf_token()" />
+                            <div class="row mt32 mb32">
+                                <div class='col-md-3'>
+                                    <h5><label class="control-label" for="date"><strong>Select Date</strong></label></h5>
+                                    <div class="input-group date">
+                                        <input type="date"
+                                            name="service_schedule_date"
+                                            class="form-control"
+                                            data-date-format="YYYY-MM-DD"
+                                            placeholder="YYYY-MM-DD"
+                                            t-att-min="current_date"
+                                            t-att-value="service_schedule_date or False"/>
+                                     </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5><label class="control-label" for="selected_slot"><strong>Selected Slot:</strong></label></h5>
+                                    <h5>
+                                        <strong id="selected_slot" name="selected_slot" t-att-value="selected_slot or ''"/>
+                                    </h5>
+                                </div>
+                                <div class='col-md-3'>
+                                    <h5><label class="control-label" for="pickup"><strong>Car Pickup?</strong></label></h5>
+                                    <label class="switch">
+                                        <input type="checkbox"
+                                            class="form-control"
+                                            name="pickup" id="togBtn"
+                                            t-att-checked="pickup and 'checked' or None"/>
+                                        <div class="slider round"></div>
+                                    </label>
+                                </div>
+                                <div class='col-md-3'>
+                                    <h5><label class="control-label" for="car_number"><strong>Car Number</strong></label></h5>
+                                    <input type="text"
+                                        name="car_number" class="form-control"
+                                        t-att-value="car_number" />
+                                </div>
+
+                            </div>
+                            <h5><strong>Select Slot</strong></h5>
+                            <div class="row mb32">
+                                <t t-foreach="slots" t-as="slot">
+                                    <div class="col-sm-1 ">
+                                        <a t-att-name="slot.name"
+                                            href="#"
+                                            t-field="slot.name"
+                                            class="slot"
+                                            t-options='{"widget": "float_time"}'/>
+                                    </div>
+                                </t>
+                                <input type="hidden"
+                                    name="slot_select" class="form-control"/>
+                            </div>
+                            <div class="row mt32 mb32">
+                                <div class='col-sm-6'>
+                                    <h5><strong>Comments</strong></h5>
+                                    <textarea class="form-control"
+                                        name="note" 
+                                        placeholder="Additional note....."
+                                        ><t t-esc="note or ''"/></textarea>
+                                </div>
+                                <div class='col-sm-6'>
+                                    <h5><strong>Pickup Address</strong></h5>
+                                    <textarea class="form-control"
+                                        name="pickup_address" 
+                                        placeholder="Enter pickup address....."
+                                        ><t t-esc="pickup_address or ''"/></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb32">
+                                <div class="col-md-8">
+                                    <div class="alert alert-danger" role="alert"  t-if="error_code and error_code == 1">
+                                        <strong>Please select Valid Date and Slot!</strong>
+                                    </div>
+                                    <div class="alert alert-danger" role="alert"  t-if="error_code and error_code == 2">
+                                        <strong>Please insert Pickup Address!</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit"
+                                        class="btn btn-primary  pull-right"
+                                        aria-label="Find Services"
+                                        title="Find Services">
+                                        <i class="fa fa-search" />
+                                        Confirm Schedule
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    <template id="cart_service_info" inherit_id="website_sale.cart" name="Shopping Cart">
+        <xpath expr="//t[@t-call='website_sale.cart_lines']" position="after">
+            <div class="clearfix" t-if="website_sale_order.car_id and website_sale_order.service_schedule_date"/>
+            <div t-if="website_sale_order.car_id and website_sale_order.service_schedule_date">
+                <div class="alert alert-info" role="alert">
+                    <h5 class="text-center">
+                        <strong>Your Service Booking Summary</strong>
+                    </h5>
+                    <div class="row mt16">
+                        <div class="col-md-3">
+                            <strong>Car : </strong><br/>
+                            <span t-field="website_sale_order.car_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Scheduled Date : </strong><br/>
+                            <span t-field="website_sale_order.service_schedule_date"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Car Number : </strong><br/>
+                            <span t-field="website_sale_order.car_number"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Car Pickup?:  </strong><br/>
+                            <span t-esc="website_sale_order.is_pick_up and 'Yes' or 'No'"/>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <div class="col-md-6" t-if="website_sale_order.note">
+                            <strong>Comment : </strong><br/>
+                            <span t-field="website_sale_order.note"/>
+                        </div>
+                        <div class="col-md-6" t-if="website_sale_order.pickup_address">
+                            <strong>Pickup Address : </strong><br/>
+                            <span t-field="website_sale_order.pickup_address"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="payment_service_info" inherit_id="website_sale.payment" name="Payment">
+        <xpath expr="//div[@id='oe_structure_website_sale_payment_1']" position="after">
+            <div class="clearfix" t-if="website_sale_order.car_id and website_sale_order.service_schedule_date"/>
+            <div t-if="website_sale_order.car_id and website_sale_order.service_schedule_date">
+                <div class="alert alert-info" role="alert">
+                    <h5 class="text-center">
+                        <strong>Your Service Booking Summary</strong>
+                    </h5>
+                    <div class="row mt16">
+                        <div class="col-md-3">
+                            <strong>Car : </strong><br/>
+                            <span t-field="website_sale_order.car_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Scheduled Date : </strong><br/>
+                            <span t-field="website_sale_order.service_schedule_date"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Car Number : </strong><br/>
+                            <span t-field="website_sale_order.car_number"/>
+                        </div>
+                        <div class="col-md-3">
+                            <strong>Car Pickup?:  </strong><br/>
+                            <span t-esc="website_sale_order.is_pick_up and 'Yes' or 'No'"/>
+                        </div>
+                    </div>
+                    <div class="row mt16">
+                        <div class="col-md-6" t-if="website_sale_order.note">
+                            <strong>Comment : </strong><br/>
+                            <span t-field="website_sale_order.note"/>
+                        </div>
+                        <div class="col-md-6" t-if="website_sale_order.pickup_address">
+                            <strong>Pickup Address : </strong><br/>
+                            <span t-field="website_sale_order.pickup_address"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+    </data>
+</openerp>
+
