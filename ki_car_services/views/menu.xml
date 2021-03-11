@@ -28,7 +28,7 @@
 
         <menuitem id="menu_top_car_service"
             name="Car Services"
-            web_icon="KI_CAR_SERVICES,static/description/icon.png"
+            web_icon="ki_car_services,static/description/car2.png"
             sequence="10"/>
 
         <menuitem id="menu_car_service_documents"
