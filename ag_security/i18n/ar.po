@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ag_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20190522\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-12 23:30+0000\n"
+"PO-Revision-Date: 2019-07-12 23:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_security
+#: model:ir.actions.act_window,name:ag_security.action_security_access_groups
+#: model:ir.ui.menu,name:ag_security.menu_security_access_groups
+msgid "Access Groups"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ag_security_mixins_access_rights
+msgid "Access Mixin"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_base
+msgid "Base"
+msgstr "الأساس"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__child_groups
+msgid "Child Groups"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__complete_groups
+msgid "Complete Groups"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__perm_create
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__permission_create
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__permission_create
+msgid "Create Access"
+msgstr "صلاحيات الإنشاء"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__permission_unlink
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__permission_unlink
+msgid "Delete Access"
+msgstr "صلاحيات الحذف"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__display_name
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__display_name
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__display_name
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking__is_lock_editor
+msgid "Editor"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__explicit_users
+msgid "Explicit Users"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ag_security_mixins_access_groups
+msgid "Group Access Mixin"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__name
+msgid "Group Name"
+msgstr "اسم المجموعة"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__users
+msgid "Group Users"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__groups
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__groups
+msgid "Groups"
+msgstr "المجموعات"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__id
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__id
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__id
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups____last_update
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups____last_update
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights____last_update
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking__is_locked
+msgid "Locked"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_locking__locked_by
+msgid "Locked by"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ag_security_mixins_locking
+msgid "Locking Mixin"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ir_model_access
+msgid "Model Access"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__parent_group
+msgid "Parent Group"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__parent_path
+msgid "Parent Path"
+msgstr "المسار الأصلي"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__perm_read
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__permission_read
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__permission_read
+msgid "Read Access"
+msgstr "صلاحيات القراءة"
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ag_security_access_groups
+msgid "Record Access Groups"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_ir_rule
+msgid "Record Rule"
+msgstr "تسجيل القاعدة"
+
+#. module: ag_security
+#: model_terms:ir.ui.view,arch_db:ag_security.view_security_access_groups_form
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: ag_security
+#: code:addons/ag_security/models/mixins_locking.py:77
+#, python-format
+msgid "The record (%s [%s]) is locked, by an other user."
+msgstr ""
+
+#. module: ag_security
+#: code:addons/ag_security/models/mixins_access_groups.py:197
+#, python-format
+msgid "The requested operation cannot be completed due to group security restrictions. Please contact your system administrator.\n"
+"\n"
+"(Document type: %s, Operation: %s)"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__perm_unlink
+msgid "Unlink Access"
+msgstr ""
+
+#. module: ag_security
+#: model:ir.model,name:ag_security.model_res_users
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__count_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ag_security
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_access_groups__perm_write
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_groups__permission_write
+#: model:ir.model.fields,field_description:ag_security.field_ag_security_mixins_access_rights__permission_write
+msgid "Write Access"
+msgstr "صلاحيات الكتابة"
+
