@@ -39,10 +39,10 @@ var DocumentsRenderer = Widget.extend(dropzone.FileDropzoneMixin, {
 		'/ag_dms_view/static/src/xml/tree.xml'
 	],
 	cssLibs: [
-        '/ag_dms_view/static/lib/jsTree/themes/proton/style.css',
+        '/ag_dms_view/static/library/jsTree/themes/proton/style.css',
     ],
     jsLibs: [
-        '/ag_dms_view/static/lib/jsTree/jstree.js',
+        '/ag_dms_view/static/library/jsTree/jstree.js',
     ],
     template: 'ag_dms.DocumentTree',
     init: function (parent, params) {
