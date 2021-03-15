@@ -42,12 +42,7 @@ var _t = core._t;
 var QWeb = core.qweb;
 
 var DocumentTreeMainView = ActionDocumentTreeView.extend({
-	cssLibs: [
-        '/ag_dms_view/static/lib/jquery-splitter/css/jquery.splitter.css',
-    ],
-    jsLibs: [
-        '/ag_dms_view/static/lib/jquery-splitter/js/jquery.splitter.js',
-    ],
+
     custom_events: _.extend({}, ActionDocumentTreeView.prototype.custom_events, {
     	tree_ready: '_treeReady',
     	tree_changed: '_treeChanged',
