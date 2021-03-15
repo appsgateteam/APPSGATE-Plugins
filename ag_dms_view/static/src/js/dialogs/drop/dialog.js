@@ -34,10 +34,10 @@ var QWeb = core.qweb;
 
 var DocumentDropDialog = Dialog.extend({
 	cssLibs: [
-        '/ag_dms_view/static/lib/dropzone/dropzone.css',
+        '/ag_dms_view/static/library/dropzone/dropzone.css',
     ],
     jsLibs: [
-        '/ag_dms_view/static/lib/dropzone/dropzone.js',
+        '/ag_dms_view/static/library/dropzone/dropzone.js',
     ],
 	init: function (parent, options) {
     	this.options = options || {};
