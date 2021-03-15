@@ -51,7 +51,7 @@
         "demo/template_demo.xml",
         "demo/read_demo.xml",
         "demo/user_demo.xml",
-        "demo/ag_quality_docs.stage.csv"
+        "demo/muk_quality_docs.stage.csv"
     ],
     "qweb": [
         "static/src/xml/*.xml",
