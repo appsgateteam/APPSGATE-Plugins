@@ -21,17 +21,14 @@
 ###################################################################################
 
 {
-    "name": "ag Security",
+    "name": "Security",
     "summary": """Security Features""",
     "version": "12.0.2.0.1",
     "category": "Extra Tools",
     "license": "LGPL-3",
-    "website": "http://www.agit.at",
-    'live_test_url': 'https://agit.at/r/SgN',
-    "author": "ag IT",
-    "contributors": [
-        "Mathias Markl <mathias.markl@agit.at>",
-    ],
+
+    "author": "APPSGATE FZC LLC",
+
     "depends": [
         "ag_utils",
     ],
