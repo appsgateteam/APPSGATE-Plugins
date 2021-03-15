@@ -318,22 +318,23 @@ class File(models.Model):
     def _compute_path(self):
         records_with_directory = self - self.filtered(lambda rec: not rec.directory)
         if records_with_directory:
-            paths = [list(map(int, rec.directory.parent_path.split('/')[:-1])) for rec in records_with_directory]
+            paths = [list(map(int, rec.directory.parent_path.split('/')[:-1])) for rec in records_with_directory if rec.directory.parent_path]
             model = self.env['ag_dms.directory'].with_context(dms_directory_show_path=False)
-            directories = model.browse(set(functools.reduce(operator.concat, paths)))
+            directories = model.browse(set(functools.reduce(operator.concat, paths,[])))
             data = dict(directories._filter_access('read').name_get())
             for record in self:
                 path_names = []
                 path_json = []
-                for id in reversed(list(map(int, record.directory.parent_path.split('/')[:-1]))):
-                    if id not in data:
-                        break
-                    path_names.append(data[id])
-                    path_json.append({
-                        'model': model._name,
-                        'name': data[id],
-                        'id': id,
-                    })
+                if record.directory.parent_path:
+                    for id in reversed(list(map(int, record.directory.parent_path.split('/')[:-1]))):
+                        if id not in data:
+                            break
+                        path_names.append(data[id])
+                        path_json.append({
+                            'model': model._name,
+                            'name': data[id],
+                            'id': id,
+                        })
                 path_names.reverse()
                 path_json.reverse()
                 name = record.name_get()
