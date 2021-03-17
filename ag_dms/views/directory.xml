@@ -131,7 +131,11 @@
 	<field name="arch" type="xml">
 		<search>
 			<field name="name" filter_domain="['|', ('name','ilike',self), ('parent_path_names','ilike',self)]"/>
+			<field name="description" filter_domain="[('description','ilike',self)]"/>
+			<field name="files" filter_domain="[('files.name','ilike',self)]"/>
+			<field name="files" filter_domain="[('files.description','ilike',self)]" string="File Description"/>
 			<filter string="My Directories" name="filter_user" domain="[('create_uid', '=', uid)]"/>
+<!--			<filter string="My Files" name="filter_file" domain="[('files.name', '=', files.name)]"/>-->
 			<filter string="Starred Directories" name="filter_starred" domain="[('starred', '=', True)]" />
 			<separator/>
 			<filter string="Root Directories" name="filter_root" domain="[('is_root_directory', '=', True)]" />
@@ -143,6 +147,7 @@
 				<filter name="group_category" string="Category" domain="[]" context="{'group_by':'category'}" />
 				<separator/>
 				<filter name="group_storage" string="Storage" domain="[]" context="{'group_by':'storage'}" />
+
 			</group>
 		</search>
 	</field>
@@ -207,17 +212,25 @@
 							<div class="mk_directory_kanban_actions">
 								<div class="mk_directory_kanban_actions_wrapper">
 									<a type="action" name="%(ag_dms.action_dms_directories_directory)d" role="button"
-										class="btn btn-sm btn-outline-primary mk_directory_kanban_directories" 
-										t-att-title="record.count_directories.raw_value">
+										class="btn btn-sm btn-outline-primary mk_directory_kanban_directories" >
+<!--										t-att-title="record.count_directories.raw_value">-->
+
+										<field name="count_directories" />
+										<span></span>&#160;
+
 										<i class="fa fa-lg fa-folder"></i>
 									</a>
 									<a type="action" name="%(ag_dms.action_dms_files_directory)d" role="button"
-	                                	class="btn btn-sm btn-outline-primary mk_directory_kanban_files"
-	                                	t-att-title="record.count_files.raw_value">
+	                                	class="btn btn-sm btn-outline-primary mk_directory_kanban_files">
+<!--	                                	t-att-title="record.count_files.raw_value">-->
+
+										<field name="count_files" />
+										<span></span>&#160;
 										<i class="fa fa-lg fa-file"></i>
 									</a>
 								</div>
 							</div>
+
 							<div class="o_kanban_image">
 								<div class="o_kanban_image_wrapper">
 									<img t-att-src="kanban_image('ag_dms.directory', 'thumbnail_medium', record.id.raw_value)" alt="Thumbnail"/>
@@ -333,6 +346,9 @@
  							options="{'color_field': 'color', 'no_create_edit': True}" />
 					</group>
 				</group>
+				<group string="Description">
+					<field name="description" nolabel="1" placeholder="Document Description."/>
+				</group>
 				<notebook>
 					<page name="page_directories" string="Subdirectories">
 						<field name="child_directories" 
@@ -369,6 +385,7 @@
 								<field name="write_uid" readonly="1" />
 							</group>
 						</group>
+
 					</page>
 					<page name="page_access" string="Access Information">
 						<group name="permissions">

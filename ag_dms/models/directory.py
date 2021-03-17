@@ -182,7 +182,10 @@ class Directory(models.Model):
      
     size = fields.Integer(
         compute='_compute_size',
-        string="Size")    
+        string="Size")
+
+    description = fields.Text(
+        'Description', translate=True)
     
     #----------------------------------------------------------
     # Functions
