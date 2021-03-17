@@ -45,7 +45,8 @@ var PreviewManager = Widget.extend({
 		'click .mk_preview_print': '_onPrintClick',
 	}),
     jsLibs: [
-        '/ag_web_preview/static/lib/printThis/printThis.js',
+        '/ag_web_preview/static/library/printThis/printThis.js',
+        '/ag_web_preview/static/library/svg-pan-zoom/svg-pan-zoom.js'
     ],
 	files: [],
 	init: function (parent, files, index) {
