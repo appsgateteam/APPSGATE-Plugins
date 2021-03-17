@@ -161,6 +161,8 @@ class File(models.Model):
         compute='_compute_thumbnail_small',
         string="Small Thumbnail")
 
+
+
     #----------------------------------------------------------
     # Functions
     #----------------------------------------------------------

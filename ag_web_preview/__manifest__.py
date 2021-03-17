@@ -21,14 +21,17 @@
 ###################################################################################
 
 {
-    "name": "Preview",
+    "name": "ag Preview",
     "summary": """File Preview Dialog""",
     "version": "12.0.3.0.2",
     "category": "Extra Tools",
     "license": "LGPL-3",
-
-    "author": "APPSGATE FZC LLC",
-
+    "website": "http://www.agit.at",
+    'live_test_url': 'https://agit.at/r/SgN',
+    "author": "ag IT",
+    "contributors": [
+        "Mathias Markl <mathias.markl@agit.at>",
+    ],
     "depends": [
         "ag_web_utils",
     ],

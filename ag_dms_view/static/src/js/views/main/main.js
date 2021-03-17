@@ -230,7 +230,8 @@ var DocumentTreeMainView = ActionDocumentTreeView.extend({
             );
             this.$('.mk_document_preview').empty();
             this.manager.appendTo(this.$('.mk_document_preview'));
-    	} else if(node.data && node.data.odoo_model === "ag_dms.directory") {
+    	}
+    	else if(node.data && node.data.odoo_model === "ag_dms.directory") {
     		self.$el.find('.mk_document_preview').html(
     				$(QWeb.render('ag_dms.DocumentTreeViewDirectoryPreview', {
 			            widget: this,

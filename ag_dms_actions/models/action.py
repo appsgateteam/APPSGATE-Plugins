@@ -2,7 +2,7 @@
 #
 #    Copyright (c) 2017-2019 ag IT GmbH.
 #
-#    This file is part of ag Documents Actions
+#    This file is part of ag Documents Actions 
 #    (see https://agit.at).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -69,7 +69,7 @@ class FileAction(models.Model):
     
     criteria_tags = fields.Many2many(
         comodel_name='ag_dms.tag',
-        relation='ag_dms_action_criteria_tag_rel',
+        relation='ag_dms_action_criteria_tag_rel',         
         domain="""
             ['|', ['category', '=', False],
             ['category', 'child_of', criteria_category]]
@@ -86,7 +86,7 @@ class FileAction(models.Model):
         string="Filter Domain")
     
     set_directory = fields.Many2one(
-        comodel_name='ag_dms.directory',
+        comodel_name='ag_dms.directory', 
         context="{'dms_directory_show_path': True}",
         string="Set Directory")
     
@@ -97,7 +97,7 @@ class FileAction(models.Model):
     
     set_tags = fields.Many2many(
         comodel_name='ag_dms.tag',
-        relation='ag_dms_action_set_tag_rel',
+        relation='ag_dms_action_set_tag_rel',         
         domain="""
             ['|', ['category', '=', False],
             ['category', 'child_of', set_category]]

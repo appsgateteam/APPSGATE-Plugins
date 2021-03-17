@@ -20,8 +20,25 @@
 *
 **********************************************************************************/
 
-.mk_preview_image {
-    width: 100%;
+.mk_preview_vector {
+	width: 100%;
     height: 100%;
+	position: absolute;
+	.vector-controls {
+		position: absolute;
+	    bottom: 15px;
+	    right: 25px;
+	    z-index: 1;
+	    .btn {
+			color: gray('700');
+			background: transparent;
+			font-size: 25px;
+	    }
+	}
+	svg {
+	    width: 100%;
+	    height: 100%;
+		position: absolute;
+	}
 }
 
