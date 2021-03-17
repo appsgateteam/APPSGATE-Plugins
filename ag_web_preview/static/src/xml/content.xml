@@ -37,9 +37,10 @@
 <t t-name="ag_preview.PreviewContentUnsupported">
 	<t t-call="ag_preview.PreviewContent">
 	    <div class="row mk_preview_unsupported">
-			<div class="d-none d-sm-block col-sm-3 pt-3 pb-3"> 
+			<div class="d-none d-sm-block col-sm-3 pt-3 pb-3">
             	<div class="o_image" t-att-data-mimetype="widget.mimetype" />
             </div>
+
             <div class="col-12 col-sm-8"> 
             	<h3 class="pb-2" >Unsupported File</h3>
             	<table class="table">
@@ -72,5 +73,44 @@
 		</div>
 	</t>
 </t>
+
+<t t-name="ag_preview.PreviewContentImage">
+		<t t-call="ag_preview.PreviewContent">
+			<div class="mk_preview_image">
+			</div>
+		</t>
+</t>
+	
+<t t-name="ag_preview.PreviewContentVector">
+	<t t-call="ag_preview.PreviewContent">
+		<div class="mk_preview_vector">
+			<div class="vector-controls">
+				<div class="btn-group">
+					<button class="btn zoom-plus">
+						<i class="fa fa-plus-circle"></i>
+					</button>
+					<button class="btn zoom-minus">
+						<i class="fa fa-minus-circle"></i>
+					</button>
+					<button class="btn zoom-reset">
+						<i class="fa fa-refresh"></i>
+					</button>
+				</div>
+			</div>
+			<div class='vector-content'>
+			</div>
+		</div>
+	</t>
+</t>
+
+<t t-name="ag_preview.PreviewContentMSOffice">
+	<t t-call="ag_preview.PreviewContent">
+		<div class="mk_preview_msoffice">
+			<iframe/>
+		</div>
+	</t>
+</t>	
+	
+	
 
 </templates>
