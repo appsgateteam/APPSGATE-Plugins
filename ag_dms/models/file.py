@@ -180,6 +180,9 @@ class File(models.Model):
         string='Migration Status',
         readonly=True,
         prefetch=False)
+
+    description = fields.Text(
+        'Description', translate=True,size=150)
     
     #----------------------------------------------------------
     # Helper

@@ -35,6 +35,8 @@
 			<link rel="stylesheet" href="/ag_web_preview/static/src/scss/manager.scss" />
 			<link rel="stylesheet" href="/ag_web_preview/static/src/scss/dialog.scss" />
 			<link rel="stylesheet" href="/ag_web_preview/static/src/scss/form.scss" />
+			<link rel="stylesheet" href="/ag_web_preview/static/src/scss/vector.scss" />
+			<link rel="stylesheet" href="/ag_web_preview/static/src/scss/msoffice.scss" />
 		</xpath>
 		<xpath expr="//script[last()]" position="after">
 			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/registry.js"/>
@@ -46,7 +48,10 @@
 			<script type="text/javascript" src="/ag_web_preview/static/src/js/fields/binary.js"/>
 			<script type="text/javascript" src="/ag_web_preview/static/src/js/fields/image.js"/>
 			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/pdf.js"/>
+			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/image.js"/>
+			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/vector.js"/>
 			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/unsupported.js"/>
+			<script type="text/javascript" src="/ag_web_preview/static/src/js/preview/msoffice.js"/>
 		</xpath>
 	</template>
 </odoo>

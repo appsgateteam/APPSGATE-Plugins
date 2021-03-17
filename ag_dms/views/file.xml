@@ -30,6 +30,7 @@
 	<field name="arch" type="xml">
 		<search>
 			<field name="name" filter_domain="[('name','ilike',self)]"/>
+			<field name="description" filter_domain="[('description','ilike',self)]"/>
 			<filter string="All Files" name="all" domain="['|',('active', '=',  False), ('active', '!=',  False)]"/>
 			<filter string="My Files" name="filter_user" domain="[('create_uid', '=', uid)]"/>
 			<separator/>
@@ -253,6 +254,9 @@
  							options="{'color_field': 'color', 'no_create_edit': True}" />
 					</group>
 				</group>
+				<group string="Description">
+					<field name="description" nolabel="1" placeholder="Document Description."/>
+				</group>
 				<notebook>
 					<page name="page_meta" string="Meta Information">
 						<group>
@@ -265,6 +269,7 @@
 								<field name="write_uid" readonly="1" />
 							</group>
 						</group>
+
 					</page>
 					<page name="page_access" string="Access Information">
 						<group>
@@ -329,6 +334,7 @@
 	<field name="arch" type="xml">
 		<search>
 			<field name="name" filter_domain="[('name','ilike',self)]"/>
+
 			<group expand="0" string="Group By">
 				<filter name="group_storage" string="Storage" domain="[]" context="{'group_by':'storage'}" />
 			</group>

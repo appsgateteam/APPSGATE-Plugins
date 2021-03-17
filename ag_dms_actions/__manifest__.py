@@ -2,7 +2,7 @@
 #
 #    Copyright (c) 2017-2019 ag IT GmbH.
 #
-#    This file is part of ag Documents Actions
+#    This file is part of ag Documents Actions 
 #    (see https://agit.at).
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,11 +21,12 @@
 ###################################################################################
 
 {
-    "name": "Documents Actions",
+    "name": "ag Documents Actions",
     "summary": """Custom File Operations""",
     "version": '12.0.2.0.1',   
     "category": 'Document Management',   
     "license": "LGPL-3",
+
     "author": "APPSGATE FZC LLC",
 
     "depends": [

@@ -2,7 +2,7 @@
 #
 #    Copyright (c) 2017-2019 ag IT GmbH.
 #
-#    This file is part of ag Documents Actions
+#    This file is part of ag Documents Actions 
 #    (see https://agit.at).
 #
 #    This program is free software: you can redistribute it and/or modify
