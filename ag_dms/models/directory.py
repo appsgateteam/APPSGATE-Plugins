@@ -156,6 +156,8 @@ class Directory(models.Model):
         auto_join=False,
         copy=False)
 
+    #share_link_ids = fields.One2many('documents.share', 'folder_id', string="Share Links")
+
     count_directories = fields.Integer(
         compute='_compute_count_directories',
         string="Count Subdirectories")

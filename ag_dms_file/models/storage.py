@@ -23,7 +23,7 @@
 import os
 import logging
 
-from odoo import models, api, fields, tools
+from odoo import models, api, fields, tools,_
 from odoo.exceptions import AccessError
 
 _logger = logging.getLogger(__name__)

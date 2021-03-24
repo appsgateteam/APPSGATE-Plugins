@@ -42,8 +42,17 @@
 			.mk_document_col {
 				padding: 0;
 			}
+			.vsplitter {
+			    left :460px ! important;
+			}
+
+			.left_panel > div{
+			    width:50%;
+			}
 			.mk_document_col_tree > div {
 				height: 100%;
+				width:50%;
+
 				.mk_document_tree {
 					height: 100%;
 					.mk_content, .mk_tree {
@@ -51,6 +60,18 @@
 					}
 				}
 			}
+
+
+			.mk_document_col_preview > div{
+			    width: 200%;
+
+
+			}
+			.right_panel{
+			    left:460px ! important;
+
+			}
+
 		}
 	}
 }

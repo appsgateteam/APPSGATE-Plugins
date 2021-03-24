@@ -51,6 +51,10 @@ class File(models.Model):
         string="Filename", 
         required=True,
         index=True)
+
+    file_name = fields.Char(string="ContentFilename",
+
+                            index=True)
     
     active = fields.Boolean(
         string="Archived", 
