@@ -237,7 +237,8 @@
 				</group>
 				<group string="Data">
 					<group>
-						<field name="content" filename="name" widget="dms_binary" />
+						<field name="file_name" invisible="1"/>
+						<field name="content" filename="file_name" widget="dms_binary" />
 						<field name="size" widget="dms_size" />
 					</group>
 					<group>

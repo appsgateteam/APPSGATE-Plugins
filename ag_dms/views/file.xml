@@ -209,6 +209,7 @@
 					attrs="{'invisible':['|',('is_locked', '!=', False),('permission_write', '=', False)]}" />
 				<button class="oe_highlight" name="unlock" type="object" string="Unlock"
 					attrs="{'invisible':['|',('is_locked', '=', False),('is_lock_editor', '=', False)]}" />
+				<button type="object" class="oe_highlight" name="action_share" string="Share"/>
 			</header>
 			<div class="alert alert-warning text-center o_form_header" attrs="{'invisible': [('is_locked', '!=', True)]}" role="status">
          		<strong>This file is locked!</strong>
@@ -234,7 +235,8 @@
 				</div>
 				<group name="content">
 					<group>
-						<field name="content" filename="name" />
+						<field name="file_name" invisible="1"/>
+						<field name="content" filename="file_name" />
 						<field name="size" widget="binary_size" />
 					</group>
 					<group>
@@ -252,6 +254,15 @@
  							options="{'no_open': True, 'no_create': True}" />
 						<field name="tags" widget="many2many_tags" placeholder="Tags..."
  							options="{'color_field': 'color', 'no_create_edit': True}" />
+					</group>
+				</group>
+				<group name="partner">
+					<group>
+						<field name="partner_id"/>
+					</group>
+					<group>
+						<field name="owner_id" />
+
 					</group>
 				</group>
 				<group string="Description">

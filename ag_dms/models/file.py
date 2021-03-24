@@ -64,8 +64,12 @@ class File(models.Model):
     #----------------------------------------------------------
     
     name = fields.Char(
-        string="Filename", 
+        string="Filename",
         required=True,
+        index=True)
+
+    file_name = fields.Char(string="ContentFilename",
+
         index=True)
 
     active = fields.Boolean(
@@ -103,6 +107,9 @@ class File(models.Model):
         readonly=True,
         store=True,
         index=True)
+
+    partner_id = fields.Many2one('res.partner', string="Contact")
+    owner_id = fields.Many2one('res.users', string="Document Owner")
     
     path_names = fields.Char(
         compute='_compute_path',
@@ -183,6 +190,8 @@ class File(models.Model):
 
     description = fields.Text(
         'Description', translate=True,size=150)
+
+
     
     #----------------------------------------------------------
     # Helper
@@ -266,7 +275,7 @@ class File(models.Model):
         operator, directory_id = self._search_panel_directory(**kwargs)
         if directory_id and field_name == 'directory':
             domain = expression.AND([
-                kwargs.get('search_domain', []),
+               # kwargs.get('search_domain', []),
                 kwargs.get('category_domain', []),
                 kwargs.get('filter_domain', []),
                 [('parent_directory', operator, directory_id)],
@@ -390,6 +399,22 @@ class File(models.Model):
                 record.migration = "%s > %s" % (file_label, storage_label)
             else:
                 record.migration = selection.get(storage_type)
+
+    # @api.multi
+    # def action_share(self):
+    #
+    #     self.ensure_one()
+    #     vals = {
+    #         'type': 'ids',
+    #         'document_ids': [(6, 0, self.ids)],
+    #         'folder_id': self.directory.id,
+    #     }
+    #     return self.env['documents.share'].create_share(vals)
+
+
+
+
+
 
     @api.multi
     def read(self, fields=None, load='_classic_read'):
@@ -541,6 +566,7 @@ class File(models.Model):
             values = self._update_content_vals(record, values, binary)
             values.update({
                 'content_binary': record.content,
+
             })
             updates[tools.frozendict(values)].add(record.id)
         with self.env.norecompute():

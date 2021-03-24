@@ -15,6 +15,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+
+
+
 .splitter_panel {
   position: relative;
 }
@@ -23,6 +27,7 @@
     cursor: col-resize;
     z-index:900;
     width: 7px;
+
 }
 
 .splitter_panel .hsplitter {
@@ -38,7 +43,7 @@
 .splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel,
 .splitter_panel .hsplitter, .splitter_panel .top_panel, .splitter_panel .bottom_panel {
     position: absolute;
-    overflow: auto;
+
 }
 .splitter_panel .vsplitter, .splitter_panel .left_panel, .splitter_panel .right_panel {
   height: 100%;
