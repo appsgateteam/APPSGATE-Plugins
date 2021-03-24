@@ -57,7 +57,10 @@
 	<field name="res_model">ag_dms.file</field>
 	<field name="view_mode">kanban,tree,graph,pivot,form</field>
 	<field name="domain">
-		[("is_hidden", "=",  False)]
+		[
+			("directory", "=",  active_id),
+			("is_hidden", "=",  False)
+		]
 	</field>
 	<field name="context">
 		{
@@ -108,7 +111,10 @@
 	<field name="res_model">ag_dms.file</field>
 	<field name="view_mode">kanban,tree,graph,pivot,form</field>
 	<field name="domain">
-		[("is_hidden", "=",  False)]
+		[
+			("directory", "=",  active_id),
+			("is_hidden", "=",  False)
+		]
 	</field>
 	<field name="context">
 		{

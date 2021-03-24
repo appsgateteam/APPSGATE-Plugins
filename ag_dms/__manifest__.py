@@ -45,6 +45,7 @@
         "views/directory.xml",
         "views/storage.xml",
         "views/res_config_settings.xml",
+        #"views/dms_share.xml",
     ],
     "demo": [
         "demo/res_users.xml",

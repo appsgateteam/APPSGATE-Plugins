@@ -8,3 +8,4 @@ access_dms_storage_manager,dms_storage_manager,model_ag_dms_storage,group_dms_ma
 
 access_dms_directory_user,dms_directory_user,model_ag_dms_directory,group_dms_user,1,1,1,1
 access_dms_file_user,dms_file_user,model_ag_dms_file,group_dms_user,1,1,1,1
+
